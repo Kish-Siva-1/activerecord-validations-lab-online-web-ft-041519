@@ -1,9 +1,10 @@
 class MyValidator < ActiveModel::Validator
   def validate(record)
-    unless record.title.match(Regexp.union(["Won't Believe", "Secret", "Top [number]", "Guess"]))
-      record.errors[:title] << 'Need a name including X please!'
+    if record.title
+      unless record.title.match(Regexp.union(["Won't Believe", "Secret", "Top [number]", "Guess"]))
+        record.errors[:title] << 'Need a name including X please!'
+      end
     end
-
   end
 end
 
