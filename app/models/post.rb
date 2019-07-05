@@ -1,6 +1,5 @@
 class MyValidator < ActiveModel::Validator
   def validate(record)
-    binding.pry
     unless record.title.split(" ").any? { |i| ["Won't", "Believe", "Secret", "Top [number]", "Guess"].include? i }
       record.errors[:title] << 'Need a name including X please!'
     end
