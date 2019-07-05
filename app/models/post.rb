@@ -1,8 +1,8 @@
 class MyValidator < ActiveModel::Validator
   def validate(record)
     binding.pry
-    unless record.name.include? ["Won't Believe", "Secret", "Top [number]", "Guess"]
-      record.errors[:name] << 'Need a name including X please!'
+    unless record.title.include? ["Won't Believe", "Secret", "Top [number]", "Guess"]
+      record.errors[:title] << 'Need a name including X please!'
     end
   end
 end
