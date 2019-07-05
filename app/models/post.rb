@@ -1,6 +1,6 @@
 class MyValidator < ActiveModel::Validator
   def validate(record)
-    unless record.name.include? ['X', 
+    unless record.name.include? ["Won't Believe",  
       record.errors[:name] << 'Need a name starting with X please!'
     end
   end
